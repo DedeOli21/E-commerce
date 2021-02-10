@@ -328,6 +328,7 @@
   </q-page>
 </template>
 
+
 <script>
 import Vue from "vue";
 
@@ -337,11 +338,34 @@ export default {
       slide: "first",
       trending_slide: 1,
       latest_slide: 1,
-    };
+      home: "ok"
+    }
   },
-  methods: {},
+
+  mounted () {
+    axios
+      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+      .then(response => (this.info = response))
+  },
+
+  created(){
+      this.home();
+    },
+
+  methods: {
+    home(){
+      this.axios.get()
+    }
+    
+  },
 };
+
+
 </script>
+
+
+
+
 
 <style scoped>
 .custom-caption {
