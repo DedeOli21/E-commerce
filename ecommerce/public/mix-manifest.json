@@ -1,3 +1,4 @@
 {
-    "/resources/views/welcome.blade.php.js": "/resources/views/welcome.blade.php.js"
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css"
 }

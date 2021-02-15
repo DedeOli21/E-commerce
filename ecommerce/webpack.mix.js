@@ -11,5 +11,14 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('Front_end Quasar/dist/spa/index.html', 'resources/views/welcome.blade.php')
-    .copyDirectory('Front_end Quasar/dist/spa', 'public')
+mix.js('resources/js/app.js', 'public/js').vue()
+    .postCss('resources/css/app.css', 'public/css', [
+        require('postcss-import'),
+        require('tailwindcss'),
+        require('autoprefixer'),
+    ])
+    .webpackConfig(require('./webpack.config'));
+
+if (mix.inProduction()) {
+    mix.version();
+}

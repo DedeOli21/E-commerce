@@ -15,6 +15,7 @@ const routes = [
       { path: '/pulseiras', component: () => import('pages/pulseiras.vue') },
       { path: '/Brincos', component: () => import('pages/Brincos.vue') },
       { path: '/Pingentes', component: () => import('pages/Pingentes.vue') },
+      { path: '/Registrar', component: () => import('pages/Registrar.vue') },
       //{ path: '/detalhes', component: () => import('pages/detalhes.vue') },
       //{ path: '/management', component: () => import('pages/management.vue') },
       //{ path: '/request', component: () => import('pages/request.vue') },
