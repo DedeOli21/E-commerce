@@ -15,14 +15,17 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
+        'canLogin' => Route::has('loginInertia'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
+}); */
+
+Route::get('../Front_end Quasar/src/pages/login.vue', function (){
+    return ('Login');})->name('Login');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');

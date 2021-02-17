@@ -9,52 +9,58 @@
           <q-card-section class="col-md-8 col-lg-8 col-sm-12 sol-xs-12 float-left">
             <q-card-section class="items-center">
               <div>
-                <div
-                  v-if="!$q.platform.is.desktop"
-                  class="text-weight-bolder text-center q-mb-md text-primary text-h6"
-                >
-                  !!!!!
-                </div>
                 <q-form
                   :style="
-                    $q.platform.is.desktop ? 'width:55%;margin: auto;' : 'margin: auto;'
+                    $q.platform.is.desktop ? 'width:55%; margin: auto;' : 'margin: auto;'
                   "
+                  v-on:keyup.enter="logar()"
+                  v-model="FormLogin"
+                  ref="FormLogin"
                   class="q-gutter-md"
                 >
                   <span class="text-subtitle1 text-weight-bold text-grey-7"
-                    >Brilhante Fonte</span
-                  >
+                    >Brilhante Fonte
+                  </span>
                   <q-input
                     filled
-                    v-model="nome"
-                    label="Email *"
                     lazy-rules
+                    v-model="FormLogin"
+                    type="email"
+                    label="Email *"
                     :rules="[
                       (val) => (val && val.length > 0) || 'Verificar campo de usuario',
                     ]"
-                  />
+                  >
+                  </q-input>
                   <q-input
                     filled
-                    type="password"
-                    v-model="password"
-                    label="Sua senha*"
                     lazy-rules
+                    type="password"
+                    v-model="FormLogin"
+                    label="Sua senha*"
                     :rules="[
                       (val) => (val !== null && val !== '') || 'Campo obrigatorio',
                       (val) =>
                         (val > 0 && val < 100) || 'Por favor digite uma senha valida',
                     ]"
-                  />
+                  >
+                  </q-input>
                   <div>
-                    <q-btn label="Login" type="submit" color="black"></q-btn>
+                    <q-btn
+                      label="Login"
+                      type="submit"
+                      color="black"
+                      @click="logar()"
+                    ></q-btn>
                   </div>
                   <!-- <q-btn label="Criar uma conta" type="submit" color="black" ></q-btn> -->
                   <a
                     href="/Registrar"
                     id="Register"
                     style="color: black; text-decoration: none"
-                    >Criar uma conta ?</a
                   >
+                    Criar uma conta ?
+                  </a>
                 </q-form>
               </div>
             </q-card-section>
@@ -66,19 +72,46 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      form: {
-        email: "",
-        password: "",
+ import axios from "axios";
+
+ export default {
+   name: 'FormLogin',
+   data(){
+     return{
+         FormLogin: {
+          email: "",
+          password: "",
+          },
+          }
+   },
+
+   created(){
+     
+       
+     
+   },
+    
+   mounted(){
+     axios({
+        method: 'get',
+        url: 'https://ecommerce.test/Login',})
+   },
+ }
+
+ /*  data() {
+     
       },
-    };
+  
+  },
+  methods: {
+    login() {},
   },
   created() {
-    console.log("Funcionou", this.getUser);
+    console.log("Funcionou", this.FormLogin);
   },
-};
+}); */
+
+
 </script>
 
 <style scoped></style>
