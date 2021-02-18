@@ -1,0 +1,6 @@
+{
+    "require": {
+        "laravel/jetstream": "^2.2",
+        "inertiajs/inertia-laravel": "^0.3.6"
+    }
+}
