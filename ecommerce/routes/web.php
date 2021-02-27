@@ -24,8 +24,8 @@ use Inertia\Inertia;
     ]);
 }); 
 
-Route::get('../Front_end Quasar/src/pages/login.vue', function (){
-    return ('login');})->name('login');
+/* Route::get('../Front_end Quasar/src/pages/login.vue', function (){
+    return ('login');})->name('login'); */
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
