@@ -6,7 +6,7 @@
         <div class="row">
           <div class="col-sm-12 col-xs-12">
             <q-toolbar-title>
-              <img @click="$router.push('/home')" class="cursor-pointer float-left" src="statics/images/diamond.png" style="width: 12%"/>
+              <img @click="$router.push('/home')" class="cursor-pointer float-left" src="statics/images/diamond.png" style="width: 20%"/>
               <span class="float-left q-mt-xs q-ml-md text-h6 text-weight-bold" style="font-size: 17px;">Brilhante Fontes</span>
             </q-toolbar-title>
           </div>
@@ -252,4 +252,9 @@
     cursor: pointer;
     border-radius: 3px;
   }
+
+@media only screen and (max-device-width: 900px) {
+/* .menu { width:100%; } */
+}
+
 </style>

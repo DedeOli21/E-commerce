@@ -289,7 +289,7 @@
           style="border-right: 1px solid lightgrey"
         >
           <q-img
-            src="~/src/statics/images/Pagar_me.png"
+            src="<img src="//assets.pagseguro.com.br/ps-integration-assets/banners/seguranca/seguranca_125x125.gif" alt="Banner PagSeguro" title="Compre com PagSeguro e fique sossegado"><img src="//assets.pagseguro.com.br/ps-integration-assets/banners/seguranca/seguranca_125x125.gif" alt="Banner PagSeguro" title="Compre com PagSeguro e fique sossegado">"
           ></q-img>
           <div class="text-subtitle1 q-mb-sm text-grey-8">Pagamentos 100% confiaveis</div>
         </div>

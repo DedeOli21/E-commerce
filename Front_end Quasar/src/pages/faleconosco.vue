@@ -158,4 +158,6 @@ export default {
   background-position: 50% 50%;
   
 }
+
+  
 </style>
